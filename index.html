@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="./assets/css/style.css" />
+        <title>Super Slack Saver</title>
+    </head>
+    <body>
+        <main> 
+            <!-- This Div is for the app buttons to launch the apps in the server.-->
+            <div id="appbox">
+                <h4>Create a new App</h4>
+                <button type = "submit" class = "appbtn">Create New Quizz App</button>
+                <button type = "submit" class = "appbtn">Create Password Generator App</button>
+            </div>
+            <!-- This Div is for the Docker API box of most everything.-->
+            <div>
+                <!-- These headers are for the two title parts of the box. Should presumably be one singular header, with a large gap.-->
+                <h4>Virtual Application</h4>
+                <h4>Launch App</h4>
+              <!-- This is tghe first app's Docker API information.-->
+                <p>
+                    <div>
+                        <button type = "submit" class = "monitorbtn"></button>
+                        Crazy Quizz
+                    </p>
+                <!-- This is for the first app's launching box buttons.-->  
+                    <li>
+                    <button type = "submit" class = "quizzbtn">Start</button>
+                    <button type = "submit" class = "quizzbtn">Restart</button>
+                    <button type = "submit" class = "quizzbtn">Stop</button>
+                    </li>
+                    <!-- This is for the link to the Quizz App's server.-->
+                    <a href="#">Quizz Link </a> 
+                </div>
+
+              <!-- This is the second app's Docker API information.-->
+                <p>
+                    <div>
+                    <button type = "submit" class = "monitorbtn"></button>
+                    Password Generator
+                    </div>
+                 <!-- This is for the second app's launching box buttons.-->                    
+                    <li>
+                    <button type = "submit" class = "pwgbtn">Start</button>
+                    <button type = "submit" class = "pwgbtn">Restart</button>
+                    <button type = "submit" class = "pwgbtn">Stop</button>
+                    </li>
+                    <!-- This is for the link to the Password Generator App's server.-->
+                    <a href="#">Password Generator Link </a> 
+                </p>
+            </div>
+            <!-- This is for the container stat monitoring-->
+            <div>
+                <p> Container Stat Monitoring Here.</p>
+            </div>
+        </main>
+        <script src="./assets/js/script.js"></script>
+    </body>
+</html>
