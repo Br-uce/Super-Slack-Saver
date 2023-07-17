@@ -12,8 +12,8 @@
             <!-- This Div is for the app buttons to launch the apps in the server.-->
             <div id="appbox">
                 <h4>Create a new App</h4>
-                <button type = "submit" class = "appbtn">Create New Quizz App</button>
-                <button type = "submit" class = "appbtn">Create Password Generator App</button>
+                <button type = "submit" id = "quizzbtn" class = "btn appbtn">Create New Quizz App</button>
+                <button type = "submit" id = "pwgbtn" class = "btn appbtn">Create Password Generator App</button>
             </div>
             <!-- This Div is for the Docker API box of most everything.-->
             <div>
@@ -23,30 +23,30 @@
               <!-- This is tghe first app's Docker API information.-->
                 <p>
                     <div>
-                        <button type = "submit" class = "monitorbtn"></button>
+                        <button type = "submit" id = "quizzbtn" class = "btn monitorbtn"></button>
                         Crazy Quizz
                     </p>
                 <!-- This is for the first app's launching box buttons.-->  
                     <li>
-                    <button type = "submit" class = "quizzbtn">Start</button>
-                    <button type = "submit" class = "quizzbtn">Restart</button>
-                    <button type = "submit" class = "quizzbtn">Stop</button>
+                    <button type = "submit" id = "quizzbtn" class = "btn startbtn">Start</button>
+                    <button type = "submit" id = "quizzbtn" class = "btn restartbtn">Restart</button>
+                    <button type = "submit" id = "quizzbtn" class = "btn stopbtn">Stop</button>
                     </li>
                     <!-- This is for the link to the Quizz App's server.-->
                     <a href="#">Quizz Link </a> 
                 </div>
-
+                
               <!-- This is the second app's Docker API information.-->
                 <p>
                     <div>
-                    <button type = "submit" class = "monitorbtn"></button>
+                    <button type = "submit" id = "pwgbtn" class = "btn monitorbtn"></button>
                     Password Generator
                     </div>
                  <!-- This is for the second app's launching box buttons.-->                    
                     <li>
-                    <button type = "submit" class = "pwgbtn">Start</button>
-                    <button type = "submit" class = "pwgbtn">Restart</button>
-                    <button type = "submit" class = "pwgbtn">Stop</button>
+                    <button type = "submit" id = "pwgbtn" class = "btn startbtn">Start</button>
+                    <button type = "submit" id = "pwgbtn" class = "btn restartbtn">Restart</button>
+                    <button type = "submit" id = "pwgbtn" class = "btn stopbtn">Stop</button>
                     </li>
                     <!-- This is for the link to the Password Generator App's server.-->
                     <a href="#">Password Generator Link </a> 
@@ -56,7 +56,12 @@
             <div>
                 <p> Container Stat Monitoring Here.</p>
             </div>
+            <div>
+                <button type = "submit" id = "testbtn" class = "btn">Test</button>
+            </div>
         </main>
+        <!-- Unsure if this is the correct sorce for the api.-->
+        <!--<script src="https://docs.docker.com/engine/api/v1.43/"></script> -->
         <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
         <script src="./assets/js/script.js"></script>
     </body>
