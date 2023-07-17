@@ -11,12 +11,11 @@ $(function appbuttons () {
       event.stopPropagation();
       var button = $(event.target);
       // Code to execute when a button is clicked
-      console.log("App Button clicked.");
       if(button.is('#quizzbtn')) {
-        console.log("Quizz Button clicked.")
+        console.log("Quizz App Button clicked.")
       }
       else if(button.is('#pwgbtn')) {
-        console.log("Password Button clicked.")
+        console.log("Password App Button clicked.")
       }
       });
   });
@@ -29,12 +28,11 @@ $(function appbuttons () {
       event.stopPropagation();
       var button = $(event.target);
       // Code to execute when a button is clicked
-      console.log("Monitor Button clicked.");
       if(button.is('#quizzbtn')) {
-        console.log("Quizz Button clicked.")
+        console.log("Quizz Monitor Button clicked.")
       }
       else if(button.is('#pwgbtn')) {
-        console.log("Password Button clicked.")
+        console.log("Password Monitor Button clicked.")
       }
       });
   });
@@ -47,12 +45,11 @@ $(function appbuttons () {
       event.stopPropagation();
       var button = $(event.target);
       // Code to execute when a button is clicked
-      console.log("Start Button clicked.");
       if(button.is('#quizzbtn')) {
-        console.log("Quizz Button clicked.")
+        console.log("Quizz Start Button clicked.")
       }
       else if(button.is('#pwgbtn')) {
-        console.log("Password Button clicked.")
+        console.log("Password Start Button clicked.")
       }
       });
   });
@@ -65,12 +62,11 @@ $(function appbuttons () {
       event.stopPropagation();
       var button = $(event.target);
       // Code to execute when a button is clicked
-      console.log("Restart Button clicked.");
       if(button.is('#quizzbtn')) {
-        console.log("Quizz Button clicked.")
+        console.log("Quizz Restart Button clicked.")
       }
       else if(button.is('#pwgbtn')) {
-        console.log("Password Button clicked.")
+        console.log("Password Restart Button clicked.")
       }
       });
   });
@@ -83,17 +79,16 @@ $(function appbuttons () {
       event.stopPropagation();
       var button = $(event.target);
       // Code to execute when a button is clicked
-      console.log("Stop Button clicked.");
       if(button.is('#quizzbtn')) {
-        console.log("Quizz Button clicked.")
+        console.log("Quizz Stop Button clicked.")
       }
       else if(button.is('#pwgbtn')) {
-        console.log("Password Button clicked.")
+        console.log("Password Stop Button clicked.")
       }
       });
   });
 
-  $(function testbuttons () {
+  $(function testbutton () {
     // Find the test button.
     var buttons = $('#testbtn'); 
     // Add a click event listener for said buttos.
@@ -101,6 +96,6 @@ $(function appbuttons () {
       // Code to execute when a button is clicked
       console.log("Test Button clicked.");
       // This needs to connect to the Docker API, and start a Hello World Container.
-      
+
       });
   });
