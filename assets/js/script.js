@@ -1,8 +1,4 @@
-/* Need to make it check each button and pull off the appropriate effect.
-Setup the test button to launch a HelloWorld Container.
-Current idea is to check for which class type it is.
-*/
-
+// Functions for Buttons.
 $(function appbuttons () {
     // Find all the app starting buttons.
     var buttons = $('.appbtn'); 
@@ -96,6 +92,5 @@ $(function appbuttons () {
       // Code to execute when a button is clicked
       console.log("Test Button clicked.");
       // This needs to connect to the Docker API, and start a Hello World Container.
-
       });
   });
