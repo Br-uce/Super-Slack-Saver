@@ -1,16 +1,16 @@
 // Functions for Buttons.
 $(function appbuttons () {
   // Find all the app starting buttons.
-  var appbutton = $('.appbtn');
+  var appbutton = $('#appbtn');
   // Add a click event listener for each of said buttons.
   appbutton.on("click",function(event) {
     event.stopPropagation();
     var button = $(event.target);
     // Code to execute when a button is clicked
-    if(button.is('#quizzbtn')) {
+    if(button.is('.quizzbtn')) {
       console.log("Quizz App Button clicked.")
     }
-    else if(button.is('#pwgbtn')) {
+    else if(button.is('.pwgbtn')) {
       console.log("Password App Button clicked.")
     }
     });
@@ -18,16 +18,16 @@ $(function appbuttons () {
 
 $(function monitorbuttons () {
   // Find all the monitoring buttons.
-  var monitorbutton = $('.monitorbtn'); 
+  var monitorbutton = $('#monitorbtn'); 
   // Add a click event listener for each of said buttons.
   monitorbutton.on("click",function(event) {
     event.stopPropagation();
     var button = $(event.target);
     // Code to execute when a button is clicked
-    if(button.is('#quizzbtn')) {
+    if(button.is('.quizzbtn')) {
       console.log("Quizz Monitor Button clicked.")
     }
-    else if(button.is('#pwgbtn')) {
+    else if(button.is('.pwgbtn')) {
       console.log("Password Monitor Button clicked.")
     }
     });
@@ -35,16 +35,16 @@ $(function monitorbuttons () {
 
 $(function startbuttons () {
   // Find all the app server starting buttons.
-  var startbutton = $('.startbtn'); 
+  var startbutton = $('#startbtn'); 
   // Add a click event listener for each of said buttons.
   startbutton.on("click",function(event) {
     event.stopPropagation();
     var button = $(event.target);
     // Code to execute when a button is clicked
-    if(button.is('#quizzbtn')) {
+    if(button.is('.quizzbtn')) {
       console.log("Quizz Start Button clicked.")
     }
-    else if(button.is('#pwgbtn')) {
+    else if(button.is('.pwgbtn')) {
       console.log("Password Start Button clicked.")
     }
     });
@@ -52,16 +52,16 @@ $(function startbuttons () {
 
 $(function restartbuttons () {
   // Find all the app server restarting buttons.
-  var restartbutton = $('.restartbtn');
+  var restartbutton = $('#restartbtn');
   // Add a click event listener for each of said buttons.
   restartbutton.on("click",function(event) {
     event.stopPropagation();
     var button = $(event.target);
     // Code to execute when a button is clicked
-    if(button.is('#quizzbtn')) {
+    if(button.is('.quizzbtn')) {
       console.log("Quizz Restart Button clicked.")
     }
-    else if(button.is('#pwgbtn')) {
+    else if(button.is('.pwgbtn')) {
       console.log("Password Restart Button clicked.")
     }
     });
@@ -69,16 +69,16 @@ $(function restartbuttons () {
 
 $(function stopbuttons () {
   // Find all the app server stopping buttons.
-  var stopbutton = $('.stopbtn'); 
+  var stopbutton = $('#stopbtn'); 
   // Add a click event listener for each of said buttons.
   stopbutton.on("click",function(event) {
     event.stopPropagation();
     var button = $(event.target);
     // Code to execute when a button is clicked
-    if(button.is('#quizzbtn')) {
+    if(button.is('.quizzbtn')) {
       console.log("Quizz Stop Button clicked.")
     }
-    else if(button.is('#pwgbtn')) {
+    else if(button.is('.pwgbtn')) {
       console.log("Password Stop Button clicked.")
     }
     });
