@@ -1,9 +1,9 @@
 // Functions for Buttons.
 $(function appbuttons () {
   // Find all the app starting buttons.
-  var buttons = $('.appbtn'); 
+  var appbutton = $('.appbtn');
   // Add a click event listener for each of said buttons.
-  buttons.click(function(event) {
+  appbutton.on("click",function(event) {
     event.stopPropagation();
     var button = $(event.target);
     // Code to execute when a button is clicked
@@ -18,9 +18,9 @@ $(function appbuttons () {
 
 $(function monitorbuttons () {
   // Find all the monitoring buttons.
-  var buttons = $('.monitorbtn'); 
+  var monitorbutton = $('.monitorbtn'); 
   // Add a click event listener for each of said buttons.
-  buttons.click(function(event) {
+  monitorbutton.on("click",function(event) {
     event.stopPropagation();
     var button = $(event.target);
     // Code to execute when a button is clicked
@@ -35,9 +35,9 @@ $(function monitorbuttons () {
 
 $(function startbuttons () {
   // Find all the app server starting buttons.
-  var buttons = $('.startbtn'); 
+  var startbutton = $('.startbtn'); 
   // Add a click event listener for each of said buttons.
-  buttons.click(function(event) {
+  startbutton.on("click",function(event) {
     event.stopPropagation();
     var button = $(event.target);
     // Code to execute when a button is clicked
@@ -52,9 +52,9 @@ $(function startbuttons () {
 
 $(function restartbuttons () {
   // Find all the app server restarting buttons.
-  var buttons = $('.restartbtn'); 
+  var restartbutton = $('.restartbtn');
   // Add a click event listener for each of said buttons.
-  buttons.click(function(event) {
+  restartbutton.on("click",function(event) {
     event.stopPropagation();
     var button = $(event.target);
     // Code to execute when a button is clicked
@@ -69,9 +69,9 @@ $(function restartbuttons () {
 
 $(function stopbuttons () {
   // Find all the app server stopping buttons.
-  var buttons = $('.stopbtn'); 
+  var stopbutton = $('.stopbtn'); 
   // Add a click event listener for each of said buttons.
-  buttons.click(function(event) {
+  stopbutton.on("click",function(event) {
     event.stopPropagation();
     var button = $(event.target);
     // Code to execute when a button is clicked
@@ -84,22 +84,22 @@ $(function stopbuttons () {
     });
 });
 
-  $(function testbutton () {
-    // Find the test button.
-    var testbutton = $('#testbtn'); 
-    testbutton.click(function() {
-        // Docker API endpoint URL
-        var apiUrl = 'http://3.87.112.145:2375/info';
-        // Docker API credentials
-        var username = 'sup3rslacks3rv3r';
-        var password = 'vg3J#!5QL9cxSaQs';
-        // Base64-encoded credentials for the Authorization header
-        var base64Credentials = btoa(username + ':' + password);
-        // Command payload
-        var command = {
-          // Include the necessary parameters for your Docker API command
-        };
-        // Send a GET request to the Docker API endpoint
+$(function testbuttons () {
+  // Find the test button. 
+  var testbutton = $('#testbtn');
+  testbutton.on("click",function() {
+      // Docker API endpoint URL
+      var apiUrl = 'http://3.87.112.145:2375/info';
+      // Docker API credentials
+      var username = 'sup3rslacks3rv3r';
+      var password = 'vg3J#!5QL9cxSaQs';
+      // Base64-encoded credentials for the Authorization header
+      var base64Credentials = btoa(username + ':' + password);
+      // Command payload
+      var command = {
+        // Include the necessary parameters for your Docker API command
+      };
+      // Send a GET request to the Docker API endpoint
       $.ajax({
         url: apiUrl,
         type: 'GET',
@@ -115,7 +115,7 @@ $(function stopbuttons () {
         error: function(jqXHR, textStatus, errorThrown) {
         // Handle the error response
         console.log('Error:', textStatus, errorThrown);
-       }
-     });
-   }); 
+      }
+    });
+  }); 
 });
