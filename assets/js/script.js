@@ -1,7 +1,7 @@
 // Functions for Buttons.
 $(function appbuttons () {
   // Find all the app starting buttons.
-  var appbutton = $('#appbtn');
+  var appbutton = $('.appbtn');
   // Add a click event listener for each of said buttons.
   appbutton.on("click",function(event) {
     event.stopPropagation();
@@ -18,7 +18,7 @@ $(function appbuttons () {
 
 $(function monitorbuttons () {
   // Find all the monitoring buttons.
-  var monitorbutton = $('#monitorbtn'); 
+  var monitorbutton = $('.monitorbtn'); 
   // Add a click event listener for each of said buttons.
   monitorbutton.on("click",function(event) {
     event.stopPropagation();
@@ -35,7 +35,7 @@ $(function monitorbuttons () {
 
 $(function startbuttons () {
   // Find all the app server starting buttons.
-  var startbutton = $('#startbtn'); 
+  var startbutton = $('.startbtn'); 
   // Add a click event listener for each of said buttons.
   startbutton.on("click",function(event) {
     event.stopPropagation();
@@ -52,7 +52,7 @@ $(function startbuttons () {
 
 $(function restartbuttons () {
   // Find all the app server restarting buttons.
-  var restartbutton = $('#restartbtn');
+  var restartbutton = $('.restartbtn');
   // Add a click event listener for each of said buttons.
   restartbutton.on("click",function(event) {
     event.stopPropagation();
@@ -69,7 +69,7 @@ $(function restartbuttons () {
 
 $(function stopbuttons () {
   // Find all the app server stopping buttons.
-  var stopbutton = $('#stopbtn'); 
+  var stopbutton = $('.stopbtn'); 
   // Add a click event listener for each of said buttons.
   stopbutton.on("click",function(event) {
     event.stopPropagation();
