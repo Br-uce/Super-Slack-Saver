@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./assets/css/reset.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Super Slack Saver</title>
 </head>
@@ -17,72 +16,65 @@
         <div id="appbox">
             <h1><strong>Super Slack Saver</strong></h3>
                 <h4>Create a new App</h4>
-                <button type="submit" id="quizzbtn"
-                    class="appbtn px-5 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-blue-600 lg:px-2 rounded-xl hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Create
-                    New Quizz App</button>
-                <button type="submit" id="pwgbtn"
-                    class="appbtn btnpx-5 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-blue-600 lg:px-2 rounded-xl hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Create
-                    Password Generator App</button>
-        </div>
-        <!-- This Div is for the Docker API box of most everything.-->
-        <div class="flex items-center justify-center h-screen">
-            <div class="bg-indigo-800 text-white font-bold rounded-lg border shadow-lg p-10">
-                <!-- These headers are for the two title parts of the box. Should presumably be one singular header, with a large gap.-->
-                <h4>Virtual Application</h4>
-                <h4>Launch App</h4>
-                <!-- This is the first app's Docker API information.-->
-                <p>
-                    <!-- created the tailwind branch-->
-                <div>
-                    <button type="submit" id="quizzbtn" class="btn monitorbtn"></button>
-                    Crazy Quizz
-                </div>
-                <!-- This is for the first app's launching box buttons.-->
-                <li>
-                    <button type="submit" id="quizzbtn" class="btn startbtn">Start</button>
-                    <button type="submit" id="quizzbtn" class="btn restartbtn">Restart</button>
-                    <button type="submit" id="quizzbtn" class="btn stopbtn">Stop</button>
-                </li>
-                <!-- This is for the link to the Quizz App's server.-->
-                <a href="#">Quizz Link </a>
-                </p>
-                <!-- This is the second app's Docker API information.-->
-                <p>
-                <div>
-                    <button type="submit" id="pwgbtn" class="btn monitorbtn"></button>
-                    Password Generator
-                </div>
-                <!-- This is for the second app's launching box buttons.-->
-                <li>
-                    <button type="submit" id="pwgbtn" class="btn startbtn">Start</button>
-                    <button type="submit" id="pwgbtn" class="btn restartbtn">Restart</button>
-                    <button type="submit" id="pwgbtn" class="btn stopbtn">Stop</button>
-                </li>
-                <!-- This is for the link to the Password Generator App's server.-->
-                <a href="#">Password Generator Link </a>
-                </p>
+                <button id = "quizzbtn" class="appbtn px-5 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-blue-600 lg:px-2 rounded-xl hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Create New Quizz App</button>
+                <button id = "pwgbtn" class="appbtn px-5 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-blue-600 lg:px-2 rounded-xl hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Create Password Generator App</button>
             </div>
-        </div>
-        <!-- This is for the container stat monitoring-->
-        <div>
-            <p> Container Stat Monitoring Here.</p>
-        </div>
-        <div>
-            <button type="submit" id="testbtn" class="btn">Test</button>
-        </div>
-        <footer class="bg-white" aria-labelledby="footer-heading">
-            <h2 id="footer-heading" class="sr-only">Footer</h2>
-            <div class="px-4 py-12 mx-auto bg-gray-50 max-w-7xl sm:px-6 lg:px-16">
-                <div class="flex flex-wrap items-baseline lg:justify-center">
-                    <span class="mt-2 text-sm font-light text-gray-500">
-                        Copyright © 2023
-                        <a href="https://wickedlabs.dev" class="mx-2 text-wickedblue hover:text-gray-500"
-                            rel="noopener noreferrer">Slack Webhook Link</a>. SuperSlackSaver2023
-                    </span>
-                </div>
+            <!-- This Div is for the Docker API box of most everything.-->
+            <div class="flex items-center justify-center h-screen">
+                <div class="bg-indigo-800 text-white font-bold rounded-lg border shadow-lg p-10">
+                    <!-- These headers are for the two title parts of the box. Should presumably be one singular header, with a large gap.-->
+                    <h4>Virtual Application</h4>
+                    <h4>Launch App</h4>
+                    <!-- This is the first app's Docker API information.-->
+                    <p>
+                        <div>
+                            <button id = "quizzbtn" class = "monitorbtn"></button>
+                            Crazy Quizz
+                        </div>
+                        <!-- This is for the first app's launching box buttons.-->  
+                        <li>
+                            <button id = "quizzbtn" class = "startbtn">Start</button>
+                            <button id = "quizzbtn" class = "restartbtn">Restart</button>
+                            <button id = "quizzbtn" class = "stopbtn">Stop</button>
+                        </li>
+                        <!-- This is for the link to the Quizz App's server.-->
+                        <a href="#">Quizz Link </a> 
+                    </p>
+                     <!-- This is the second app's Docker API information.-->
+                    <p>
+                        <div>
+                            <button id = "pwgbtn" class = "monitorbtn"></button>
+                            Password Generator
+                        </div>
+                        <!-- This is for the second app's launching box buttons.-->                    
+                        <li>
+                            <button id = "pwgbtn" class = "startbtn">Start</button>
+                            <button id = "pwgbtn" class = "restartbtn">Restart</button>
+                            <button id = "pwgbtn" class = "stopbtn">Stop</button>
+                        </li>
+                        <!-- This is for the link to the Password Generator App's server.-->
+                        <a href="#">Password Generator Link </a> 
+                    </p>
+            <!-- This is for the container stat monitoring-->
+            <div>
+                <p> Container Stat Monitoring Here.</p>
             </div>
-        </footer>
-    </main>
-</body>
-
+            <div>
+                <button id = "testbtn">Test</button>
+            </div>
+            <footer class="bg-white" aria-labelledby="footer-heading">
+                <h2 id="footer-heading" class="sr-only">Footer</h2>
+                <div class="px-4 py-12 mx-auto bg-gray-50 max-w-7xl sm:px-6 lg:px-16">
+                    <div class="flex flex-wrap items-baseline lg:justify-center">
+                        <span class="mt-2 text-sm font-light text-gray-500">
+                         Copyright © 2023
+                          <a href="https://wickedlabs.dev" class="mx-2 text-wickedblue hover:text-gray-500" rel="noopener noreferrer">Slack Webhook Link</a>. SuperSlackSaver2023
+                        </span>
+                    </div>
+                </div>
+            </footer>
+        </main>
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+        <script src="./assets/js/script.js"></script>
+    </body>
 </html>
