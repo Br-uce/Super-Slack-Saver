@@ -1,21 +1,4 @@
-// Functions for Buttons.
-$(function appbuttons () {
-  // Find all the app starting buttons.
-  var appbutton = $('.appbtn');
-  // Add a click event listener for each of said buttons.
-  appbutton.on("click",function(event) {
-    event.stopPropagation();
-    var button = $(event.target);
-    // Code to execute when a button is clicked
-    if(button.is('.quizzbtn')) {
-      console.log("Quizz App Button clicked.")
-    }
-    else if(button.is('.pwgbtn')) {
-      console.log("Password App Button clicked.")
-    }
-    });
-});
-
+// Functions for Button clicking.
 $(function monitorbuttons () {
   // Find all the monitoring buttons.
   var monitorbutton = $('.monitorbtn'); 
@@ -26,9 +9,11 @@ $(function monitorbuttons () {
     // Code to execute when a button is clicked
     if(button.is('.quizzbtn')) {
       console.log("Quizz Monitor Button clicked.")
+      monitorQuizz();
     }
     else if(button.is('.pwgbtn')) {
       console.log("Password Monitor Button clicked.")
+      monitorPassword();
     }
     });
 });
@@ -43,9 +28,11 @@ $(function startbuttons () {
     // Code to execute when a button is clicked
     if(button.is('.quizzbtn')) {
       console.log("Quizz Start Button clicked.")
+      startQuizz();
     }
     else if(button.is('.pwgbtn')) {
       console.log("Password Start Button clicked.")
+      startPassword();
     }
     });
 });
@@ -63,6 +50,7 @@ $(function restartbuttons () {
     }
     else if(button.is('.pwgbtn')) {
       console.log("Password Restart Button clicked.")
+      restartPassword();
     }
     });
 });
@@ -77,37 +65,39 @@ $(function stopbuttons () {
     // Code to execute when a button is clicked
     if(button.is('.quizzbtn')) {
       console.log("Quizz Stop Button clicked.")
+      stopQuizz();
     }
     else if(button.is('.pwgbtn')) {
       console.log("Password Stop Button clicked.")
+      stopPassword();
     }
     });
 });
+
+//Variables for the button internal docker functions
+var apiUrl = "http://192.168.192.220/"
+var username = 'sup3rslacks3rv3r';
+var password = 'vg3J#!5QL9cxSaQs';
+var quizzID = "7673fa5b2cd7";
+var passID = "";
 
 $(function testbuttons () {
   // Find the test button. 
   var testbutton = $('#testbtn');
   testbutton.on("click",function() {
+    console.log("Test Button Clicked");
       // Docker API endpoint URL
-      var apiUrl = 'http://3.87.112.145:2375/info';
-      // Docker API credentials
-      var username = 'sup3rslacks3rv3r';
-      var password = 'vg3J#!5QL9cxSaQs';
-      // Base64-encoded credentials for the Authorization header
-      var base64Credentials = btoa(username + ':' + password);
+      var Url = "http://192.168.192.220/info"
       // Command payload
       var command = {
         // Include the necessary parameters for your Docker API command
       };
       // Send a GET request to the Docker API endpoint
       $.ajax({
-        url: apiUrl,
+        url: Url,
         type: 'GET',
         data: JSON.stringify(command),
         contentType: 'application/json',
-        beforeSend: function(xhr) {
-          xhr.setRequestHeader('Authorization', 'Basic ' + base64Credentials);
-        },
         success: function(data) {
           // Handle the success response
           console.log('Command launched successfully:', data);
@@ -119,3 +109,111 @@ $(function testbuttons () {
     });
   }); 
 });
+
+// Functions for proper Button effects.
+
+//Quizz Functions
+function startQuizz() {
+  var command = {
+    // Include the necessary parameters for your Docker API command
+  };
+  $.ajax({
+    method: "POST", 
+    url: apiUrl + "containers/" + quizzID + "/start",
+    data: JSON.stringify(command),
+    success: function(data) {
+      console.log("Container started successfully:", data);
+    },
+    error: function(error) {
+      console.error("Error starting container:", error);
+    }
+  })
+}
+function stopQuizz() {
+  $.ajax({
+    method: "POST", 
+    url: apiUrl + "containers/" + quizzID + "/stop",
+    success: function(data) {
+      console.log("Container stopped successfully:", data);
+    },
+    error: function(error) {
+      console.error("Error stopping container:", error);
+    }
+  })
+}
+function restartQuizz() {
+  $.ajax({
+    method: "POST", 
+    url: apiUrl + "containers/" + quizzID + "/restart",
+    success: function(data) {
+      console.log("Container restarted successfully:", data);
+    },
+    error: function(error) {
+      console.error("Error restarting container:", error);
+    }
+  })
+}
+
+//Password Functions
+function startPassword() {
+  $.ajax({
+    method: "POST", 
+    url: apiUrl + "containers/" + passID + "/start",
+    success: function(data) {
+      console.log("Container started successfully:", data);
+    },
+    error: function(error) {
+      console.error("Error starting container:", error);
+    }
+  })
+}
+function stopPassword() {
+  $.ajax({
+    method: "POST", 
+    url: apiUrl + "containers/" + passID + "/stop",
+    success: function(data) {
+      console.log("Container stopped successfully:", data);
+    },
+    error: function(error) {
+      console.error("Error stopping container:", error);
+    }
+  })
+}
+function restartPassword() {
+  $.ajax({
+    method: "POST", 
+    url: apiUrl + "containers/" + passID + "/restart",
+    success: function(data) {
+      console.log("Container restarted successfully:", data);
+    },
+    error: function(error) {
+      console.error("Error restarting container:", error);
+    }
+  })
+}
+
+// Monitor Functions
+function monitorQuizz() {
+  $.ajax({
+    method: "POST", 
+    url: apiUrl + "containers/" + quizzID + "/stats",
+    success: function(data) {
+      console.log("Container monitored successfully:", data);
+    },
+    error: function(error) {
+      console.error("Error monitoring container:", error);
+    }
+  })
+}
+function monitorPassword() {
+  $.ajax({
+    method: "POST", 
+    url: apiUrl + "containers/" + passID + "/stats",
+    success: function(data) {
+      console.log("Container monitored successfully:", data);
+    },
+    error: function(error) {
+      console.error("Error monitoring container:", error);
+    }
+  })
+}
