@@ -1,21 +1,6 @@
-// Functions for Buttons.
-$(function appbuttons () {
-  // Find all the app starting buttons.
-  var appbutton = $('.appbtn');
-  // Add a click event listener for each of said buttons.
-  appbutton.on("click",function(event) {
-    event.stopPropagation();
-    var button = $(event.target);
-    // Code to execute when a button is clicked
-    if(button.is('.quizzbtn')) {
-      console.log("Quizz App Button clicked.")
-    }
-    else if(button.is('.pwgbtn')) {
-      console.log("Password App Button clicked.")
-    }
-    });
-});
+// Functions for Button clicking.
 
+/* Due to Monitoring Buttons failing to work, they are being shut off. If they can be fixed, they will be re-added.
 $(function monitorbuttons () {
   // Find all the monitoring buttons.
   var monitorbutton = $('.monitorbtn'); 
@@ -23,15 +8,18 @@ $(function monitorbuttons () {
   monitorbutton.on("click",function(event) {
     event.stopPropagation();
     var button = $(event.target);
-    // Code to execute when a button is clicked
-    if(button.is('.quizzbtn')) {
+    // Code determining which button is clicked, and then passing the function for monitoring it's container.
+    if(button.is('#quizzbtn')) {
       console.log("Quizz Monitor Button clicked.")
+      monitorQuizz();
     }
-    else if(button.is('.pwgbtn')) {
+    else if(button.is('#pwgbtn')) {
       console.log("Password Monitor Button clicked.")
+      monitorPassword();
     }
     });
 });
+*/
 
 $(function startbuttons () {
   // Find all the app server starting buttons.
@@ -40,12 +28,14 @@ $(function startbuttons () {
   startbutton.on("click",function(event) {
     event.stopPropagation();
     var button = $(event.target);
-    // Code to execute when a button is clicked
-    if(button.is('.quizzbtn')) {
+    // Code determining which button is clicked, and then passing the function for starting it's container.
+    if(button.is('#quizzbtn')) {
       console.log("Quizz Start Button clicked.")
+      startQuizz();
     }
-    else if(button.is('.pwgbtn')) {
+    else if(button.is('#pwgbtn')) {
       console.log("Password Start Button clicked.")
+      startPassword();
     }
     });
 });
@@ -57,12 +47,14 @@ $(function restartbuttons () {
   restartbutton.on("click",function(event) {
     event.stopPropagation();
     var button = $(event.target);
-    // Code to execute when a button is clicked
-    if(button.is('.quizzbtn')) {
+    // Code determining which button is clicked, and then passing the function for restarting it's container.
+    if(button.is('#quizzbtn')) {
       console.log("Quizz Restart Button clicked.")
+      restartQuizz();
     }
-    else if(button.is('.pwgbtn')) {
+    else if(button.is('#pwgbtn')) {
       console.log("Password Restart Button clicked.")
+      restartPassword();
     }
     });
 });
@@ -74,16 +66,24 @@ $(function stopbuttons () {
   stopbutton.on("click",function(event) {
     event.stopPropagation();
     var button = $(event.target);
-    // Code to execute when a button is clicked
-    if(button.is('.quizzbtn')) {
+    // Code determining which button is clicked, and then passing the function for stopping it's container.
+    if(button.is('#quizzbtn')) {
       console.log("Quizz Stop Button clicked.")
+      stopQuizz();
     }
-    else if(button.is('.pwgbtn')) {
+    else if(button.is('#pwgbtn')) {
       console.log("Password Stop Button clicked.")
+      stopPassword();
     }
     });
 });
 
+//Variables for the button internal docker functions
+var apiUrl = "http://192.168.192.220/"
+var quizzID = "ac4740d97467";
+var passID = "49f35fddf960";
+
+/* Test Button is unnecessary, but useful for bug testing, so the code is being commented out.
 $(function testbuttons () {
   // Find the test button. 
   var testbutton = $('#testbtn');
@@ -102,21 +102,125 @@ $(function testbuttons () {
       };
       // Send a GET request to the Docker API endpoint
       $.ajax({
-        url: apiUrl,
+        url: apiUrl + "info",
         type: 'GET',
         data: JSON.stringify(command),
         contentType: 'application/json',
-        beforeSend: function(xhr) {
-          xhr.setRequestHeader('Authorization', 'Basic ' + base64Credentials);
-        },
         success: function(data) {
           // Handle the success response
           console.log('Command launched successfully:', data);
         },
-        error: function(jqXHR, textStatus, errorThrown) {
+        error: function(textStatus, errorThrown) {
         // Handle the error response
         console.log('Error:', textStatus, errorThrown);
       }
     });
   }); 
-});
+}); 
+*/
+
+// Functions for proper Button effects.
+
+//Quizz Functions
+function startQuizz() {
+  $.ajax({
+    method: "POST", 
+    url: apiUrl + "containers/" + quizzID + "/start",
+    success: function(data) {
+      console.log("Container started successfully:", data);
+    },
+    error: function(error) {
+      console.error("Error starting container:", error);
+    }
+  })
+}
+function stopQuizz() {
+  $.ajax({
+    method: "POST", 
+    url: apiUrl + "containers/" + quizzID + "/stop",
+    success: function(data) {
+      console.log("Container stopped successfully:", data);
+    },
+    error: function(error) {
+      console.error("Error stopping container:", error);
+    }
+  })
+}
+function restartQuizz() {
+  $.ajax({
+    method: "POST", 
+    url: apiUrl + "containers/" + quizzID + "/restart",
+    success: function(data) {
+      console.log("Container restarted successfully:", data);
+    },
+    error: function(error) {
+      console.error("Error restarting container:", error);
+    }
+  })
+}
+
+//Password Functions
+function startPassword() {
+  $.ajax({
+    method: "POST", 
+    url: apiUrl + "containers/" + passID + "/start",
+    success: function(data) {
+      console.log("Container started successfully:", data);
+    },
+    error: function(error) {
+      console.error("Error starting container:", error);
+    }
+  })
+}
+function stopPassword() {
+  $.ajax({
+    method: "POST", 
+    url: apiUrl + "containers/" + passID + "/stop",
+    success: function(data) {
+      console.log("Container stopped successfully:", data);
+    },
+    error: function(error) {
+      console.error("Error stopping container:", error);
+    }
+  })
+}
+function restartPassword() {
+  $.ajax({
+    method: "POST", 
+    url: apiUrl + "containers/" + passID + "/restart",
+    success: function(data) {
+      console.log("Container restarted successfully:", data);
+    },
+    error: function(error) {
+      console.error("Error restarting container:", error);
+    }
+  })
+}
+
+// Monitor Functions
+/*
+function monitorQuizz() {
+  $.ajax({
+    method: "GET", 
+    url: apiUrl + "containers/" + quizzID + "/stats",
+    success: function(data) {
+      console.log("Container monitored successfully:", data);
+    },
+    error: function(error) {
+      console.error("Error monitoring container:", error);
+    }
+  })
+}
+function monitorPassword() {
+  $.ajax({
+    method: "GET", 
+    url: apiUrl + "containers/" + passID + "/stats",
+    success: function(data) {
+      console.log("Container monitored successfully:", data);
+    },
+    error: function(error) {
+      console.error("Error monitoring container:", error);
+    }
+  })
+}
+*/
