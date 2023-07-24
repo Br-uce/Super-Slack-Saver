@@ -7,11 +7,11 @@ $(function monitorbuttons () {
     event.stopPropagation();
     var button = $(event.target);
     // Code to execute when a button is clicked
-    if(button.is('.quizzbtn')) {
+    if(button.is('#quizzbtn')) {
       console.log("Quizz Monitor Button clicked.")
       monitorQuizz();
     }
-    else if(button.is('.pwgbtn')) {
+    else if(button.is('#pwgbtn')) {
       console.log("Password Monitor Button clicked.")
       monitorPassword();
     }
@@ -26,11 +26,11 @@ $(function startbuttons () {
     event.stopPropagation();
     var button = $(event.target);
     // Code to execute when a button is clicked
-    if(button.is('.quizzbtn')) {
+    if(button.is('#quizzbtn')) {
       console.log("Quizz Start Button clicked.")
       startQuizz();
     }
-    else if(button.is('.pwgbtn')) {
+    else if(button.is('#pwgbtn')) {
       console.log("Password Start Button clicked.")
       startPassword();
     }
@@ -45,10 +45,11 @@ $(function restartbuttons () {
     event.stopPropagation();
     var button = $(event.target);
     // Code to execute when a button is clicked
-    if(button.is('.quizzbtn')) {
+    if(button.is('#quizzbtn')) {
       console.log("Quizz Restart Button clicked.")
+      restartQuizz();
     }
-    else if(button.is('.pwgbtn')) {
+    else if(button.is('#pwgbtn')) {
       console.log("Password Restart Button clicked.")
       restartPassword();
     }
@@ -63,11 +64,11 @@ $(function stopbuttons () {
     event.stopPropagation();
     var button = $(event.target);
     // Code to execute when a button is clicked
-    if(button.is('.quizzbtn')) {
+    if(button.is('#quizzbtn')) {
       console.log("Quizz Stop Button clicked.")
       stopQuizz();
     }
-    else if(button.is('.pwgbtn')) {
+    else if(button.is('#pwgbtn')) {
       console.log("Password Stop Button clicked.")
       stopPassword();
     }
@@ -76,10 +77,8 @@ $(function stopbuttons () {
 
 //Variables for the button internal docker functions
 var apiUrl = "http://192.168.192.220/"
-var username = 'sup3rslacks3rv3r';
-var password = 'vg3J#!5QL9cxSaQs';
-var quizzID = "7673fa5b2cd7";
-var passID = "";
+var quizzID = "ac4740d97467";
+var passID = "49f35fddf960";
 
 $(function testbuttons () {
   // Find the test button. 

@@ -1,28 +1,55 @@
 #appbox {
-display:
-}
-
-h1 {
-text-align: center;
-font-size: larger;
-}
-
-.appBtn {
-
-}
-
-p {
-    text-align:
-}
-
-.monitorbtn {
-
-}
-
-.quizzbtn {
+    display:
+    }
+    h1 {
+    text-align: center;
+    font-size: larger;
+    }
+    .appBtn {
+    }
+    p {
+        text-align:
+    }
+    .monitorbtn {
+    }
+    .quizzbtn {
+        
+    }
     
-}
-
-#mainBox {
-    border: 50px
-}
+    #mainBox {
+        border: 50px
+    }
+    
+    .mb-4 {display: inline-flex}
+    
+    .sider {display: inline-flex}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
