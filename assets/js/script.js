@@ -88,7 +88,14 @@ $(function testbuttons () {
   // Find the test button. 
   var testbutton = $('#testbtn');
   testbutton.on("click",function() {
-    console.log("Test Button Clicked");
+      // Docker API endpoint URL
+      //var apiUrl = 'http://3.87.112.145:2375/info';
+      var apiUrl = "https://cors-anywhere.herokuapp.com/http://3.87.112.145:2375/info"
+      // Docker API credentials
+      var username = 'sup3rslacks3rv3r';
+      var password = 'vg3J#!5QL9cxSaQs';
+      // Base64-encoded credentials for the Authorization header
+      var base64Credentials = btoa(username + ':' + password);
       // Command payload
       var command = {
         // Include the necessary parameters for your Docker API command
