@@ -1,6 +1,5 @@
 // Functions for Button clicking.
 
-// Due to Monitoring Buttons failing to work, they are being shut off. If they can be fixed, they will be re-added.
 $(function monitorbuttons () {
   // Find all the monitoring buttons.
   var monitorbutton = $('.monitorbtn'); 
@@ -19,7 +18,6 @@ $(function monitorbuttons () {
     }
     });
 });
-
 
 $(function startbuttons () {
   // Find all the app server starting buttons.
@@ -192,7 +190,6 @@ function restartPassword() {
 }
 
 // Monitor Functions
-
 function monitorQuizz() {
   $.ajax({
     method: "GET", 
