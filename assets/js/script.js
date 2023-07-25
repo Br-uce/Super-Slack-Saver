@@ -197,7 +197,14 @@ function monitorQuizz() {
     success: function(data) {
       var monRes = data;
       console.log("Container monitored successfully:");
-      console.log( "The container's memory usage is: " + (Number(JSON.stringify(monRes.memory_stats.usage))/Number(JSON.stringify(monRes.memory_stats.limit))*100) + "%");
+      if(JSON.stringify(monRes.memory_stats) != "{}") {
+      var usedMem = Number(JSON.stringify(monRes.memory_stats.usage));
+      var totalMem = Number(JSON.stringify(monRes.memory_stats.limit));
+      console.log( "The container's memory usage is: " + (usedMem/totalMem*100) + "%");
+      }
+      else {
+        console.log("Container is stopped.");
+      }
     },
     error: function(error) {
       console.error("Error monitoring container:", error);
@@ -211,7 +218,14 @@ function monitorPassword() {
     success: function(data) {      
       var monRes = data;
       console.log("Container monitored successfully:");
-      console.log( "The container's memory usage is: " + (Number(JSON.stringify(monRes.memory_stats.usage))/Number(JSON.stringify(monRes.memory_stats.limit)))+ "%");
+      if(JSON.stringify(monRes.memory_stats) != "{}") {
+      var usedMem = Number(JSON.stringify(monRes.memory_stats.usage));
+      var totalMem = Number(JSON.stringify(monRes.memory_stats.limit));
+      console.log( "The container's memory usage is: " + ((usedMem/totalMem)*100) + "%");
+      }
+      else {
+        console.log("Container is stopped.");
+      }
     },
     error: function(error) {
       console.error("Error monitoring container:", error);
